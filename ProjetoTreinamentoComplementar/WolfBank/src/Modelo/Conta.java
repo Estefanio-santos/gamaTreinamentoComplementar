@@ -5,6 +5,10 @@ public class Conta {
 	private double saldo;
 	private String nome, cpf, telefone;
 
+	public Conta() {
+		
+	}
+	
 	public Conta(int numero, int agencia, double saldo, String nome, String cpf, String telefone) {
 
 		this.numero = numero;
@@ -65,11 +69,11 @@ public class Conta {
 	}
 
 	public void depositarValor(double valor) {
-		saldo += valor;
+		this.saldo += valor;
 	}
 
 	public void sacarValor(double valor) {
-		saldo -= valor;
+		this.saldo -= valor;
 	}
 
 	@Override

@@ -15,15 +15,11 @@ public class ContaEspecial extends Conta {
 	}
 
 	@Override
-	public void depositarValor(double valor) {
-		// TODO Auto-generated method stub
-		super.depositarValor(valor);
-	}
-
-	@Override
 	public void sacarValor(double valor) {
 		// TODO Auto-generated method stub
-		super.sacarValor(valor);
+		if(this.getSaldo() - valor > -300) {
+			this.setSaldo(this.getSaldo()-valor);
+		}
 	}
 
 } // fim da classe

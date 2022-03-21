@@ -14,17 +14,13 @@ this.tipo = 0;
 		return super.toString() + "; Tipo da Conta: " + tipo;
 	}
 
-@Override
-	public void depositarValor(double valor) {
-		// TODO Auto-generated method stub
-		super.depositarValor(valor);
-		
-}
 
 @Override
 	public void sacarValor(double valor) {
 		// TODO Auto-generated method stub
-		super.sacarValor(valor);
+		if(this.getSaldo() >= valor) {
+			this.setSaldo(this.getSaldo() - valor);
+		}
 }
 
 } // fim da classe

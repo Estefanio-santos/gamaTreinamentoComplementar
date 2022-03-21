@@ -17,6 +17,7 @@ public class App {
 		String nome, cpf, telefone;
 		String entradaDigitada;
 		Conta c1;
+		Conta conta = new Conta();
 
 		while (opcao != 7) {
 			System.out.println("1-Nova conta Corrente");
@@ -76,25 +77,26 @@ public class App {
 				System.out.println("Insira o número da conta para visualizar seus dados:");
 				entradaDigitada = teclado.nextLine();
 				numero = Integer.parseInt(entradaDigitada);
-				System.out.println(contas.visualizarConta(numero));
+				conta = contas.visualizarConta(numero);
+				System.out.println(conta.toString());
 				break;
 			}
 
 			case 4: {
-				System.out.println("Insira o número da conta para realizar o depósito:");
+				System.out.println(conta.getNome()+" digite o valor que deseja depositar:");
 				entradaDigitada = teclado.nextLine();
-				numero = Integer.parseInt(entradaDigitada);
-				System.out.println(contas.visualizarConta(numero));
-
+				double valor = Double.parseDouble(entradaDigitada);
+				conta.depositarValor(valor);
+				System.out.println(conta.toString());
 				break;
 			}
 
 			case 5: {
-				System.out.println("Insira o número da sua conta para realizar o saque: ");
+				System.out.println(conta.getNome()+" digite o valor que deseja sacar:");
 				entradaDigitada = teclado.nextLine();
-				numero = Integer.parseInt(entradaDigitada);
-				System.out.println(contas.visualizarConta(numero));
-
+				double valor = Double.parseDouble(entradaDigitada);
+				conta.sacarValor(valor);
+				System.out.println(conta.toString());
 				break;
 			}
 

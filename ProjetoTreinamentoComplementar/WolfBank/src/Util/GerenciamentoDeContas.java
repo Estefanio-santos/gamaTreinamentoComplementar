@@ -14,14 +14,14 @@ public class GerenciamentoDeContas {
 		contas.add(c1);
 	}
 
-	public String visualizarConta(int numero) {
+	public Conta visualizarConta(int numero) {
 		for (int i = 0; i < contas.size(); i++) {
 			if (contas.get(i).getNumero() == numero) {
-				return contas.get(i).toString();
+				return contas.get(i);
 			} // fim da condicional if
 
 		} // fim do laço de repetição for
-		return "Conta não cadastrada!";
+		throw new RuntimeException("Conta não Cadastrada");
 	}
 
 	public void listarContas() {
