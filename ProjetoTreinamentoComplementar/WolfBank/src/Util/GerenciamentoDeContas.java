@@ -24,5 +24,10 @@ return contas.get(i).toString();
 return "Conta não cadastrada!";
 }
 
+public void listarContas() {
+for(int i = 0; i < contas.size(); i++) {
+System.out.println(contas.get(i));
 }
-  // fim da classe
+}
+
+} // fim da classe
