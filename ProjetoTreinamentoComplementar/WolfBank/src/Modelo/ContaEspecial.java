@@ -19,6 +19,9 @@ public class ContaEspecial extends Conta {
 		// TODO Auto-generated method stub
 		if(this.getSaldo() - valor > -300) {
 			this.setSaldo(this.getSaldo()-valor);
+				System.out.println("Saque realizado com sucesso: R$" + valor + ". Seu saldo é de: " + this.getSaldo());
+		} else {
+		System.out.println("Saldo insuficiente.");
 		}
 	}
 

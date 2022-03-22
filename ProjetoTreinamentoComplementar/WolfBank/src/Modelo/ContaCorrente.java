@@ -20,6 +20,9 @@ this.tipo = 0;
 		// TODO Auto-generated method stub
 		if(this.getSaldo() >= valor) {
 			this.setSaldo(this.getSaldo() - valor);
+System.out.println("Saque realizado com sucesso, R$" + valor + ", e seu saldo é de R$" + this.getSaldo());
+		} else {
+			System.out.println("Saldo insuficiente!");
 		}
 }
 

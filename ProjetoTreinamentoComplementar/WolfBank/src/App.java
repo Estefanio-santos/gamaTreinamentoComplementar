@@ -87,7 +87,6 @@ public class App {
 				entradaDigitada = teclado.nextLine();
 				double valor = Double.parseDouble(entradaDigitada);
 				conta.depositarValor(valor);
-				System.out.println(conta.toString());
 				break;
 			}
 
@@ -96,7 +95,6 @@ public class App {
 				entradaDigitada = teclado.nextLine();
 				double valor = Double.parseDouble(entradaDigitada);
 				conta.sacarValor(valor);
-				System.out.println(conta.toString());
 				break;
 			}
 

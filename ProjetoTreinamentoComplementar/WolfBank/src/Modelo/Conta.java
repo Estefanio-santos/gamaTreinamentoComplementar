@@ -70,6 +70,7 @@ public class Conta {
 
 	public void depositarValor(double valor) {
 		this.saldo += valor;
+		System.out.println("Depósito realizado com sucesso: R$" + valor + ", seu saldo atual é de: R$" + this.getSaldo());
 	}
 
 	public void sacarValor(double valor) {
