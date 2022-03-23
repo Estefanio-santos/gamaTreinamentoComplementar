@@ -79,7 +79,6 @@ public class Conta {
 
 	@Override
 	public String toString() {
-		return "Conta: " + numero + "; - Agência: " + agencia + "; - Saldo de R$" + saldo + "; Nome: " + nome
-				+ "; CPF: " + cpf + "; + telefone: " + telefone;
+		return "Conta: " + numero + "; - Agência: " + agencia + "; - Saldo de R$" + saldo + "; Nome: " + nome + "; CPF: " + cpf + "; telefone: " + telefone;
 	}
 } // fim da classe
