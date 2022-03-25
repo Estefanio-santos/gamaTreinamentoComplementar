@@ -19,12 +19,24 @@ public class ContaEspecial extends Conta {
 	@Override
 	public void sacarValor(double valor) {
 		// TODO Auto-generated method stub
-		if(this.getSaldo() - valor > limite) {
+		if(this.getSaldo() - valor >= limite) {
 			this.setSaldo(this.getSaldo()-valor);
 				System.out.println("Saque realizado com sucesso: R$" + valor + ". Seu saldo é de: " + this.getSaldo() + ", e seu limite é de R$" + limite);
 		} else {
 		System.out.println("Saldo insuficiente.");
 		}
 	}
+
+@Override
+public void transfereValor(double valor, Conta destino) {
+	// TODO Auto-generated method stub
+	super.transfereValor(valor, destino);
+		if(this.getSaldo() - valor >= limite) {
+			this.setSaldo(this.getSaldo() - valor);
+			destino.depositarValor(valor);
+		} else {
+			System.out.println("Saldo insuficiente!");
+		}
+}
 
 } // fim da classe

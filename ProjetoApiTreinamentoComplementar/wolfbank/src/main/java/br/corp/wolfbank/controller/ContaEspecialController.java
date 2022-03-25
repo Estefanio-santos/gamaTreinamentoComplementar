@@ -22,7 +22,7 @@ public class ContaEspecialController {
 	@Autowired
 	private ContaEspecialDao dao;
 
-@GetMapping("/contas")
+@GetMapping("/contaespecial")
 public ResponseEntity<ArrayList<ContaEspecialModel>> listarTodas() {
 	ArrayList<ContaEspecialModel> obterDados = (ArrayList<ContaEspecialModel>) dao.findAll();
 	
@@ -33,18 +33,18 @@ public ResponseEntity<ArrayList<ContaEspecialModel>> listarTodas() {
 	}
 }
 
-@GetMapping("/conta/{numero}")
+@GetMapping("/contaespecial/{numero}")
 public ResponseEntity<ContaEspecialModel> buscarUmaUnicaConta(@PathVariable int numero) {
 	ContaEspecialModel contaEspecial = dao.findById(numero).orElse(null);
 
 	if(contaEspecial != null) {
-		ResponseEntity.ok(contaEspecial);
+		return ResponseEntity.ok(contaEspecial);
 	} else {
 		return ResponseEntity.notFound().build();
 	}
 }
 
-@PostMapping("/conta/nova")
+@PostMapping("/contaespecial/nova")
 public ResponseEntity<ContaEspecialModel> novaConta(@RequestBody ContaEspecialModel contaEspecial) {
 	try {
 		ContaEspecialModel novaConta = dao.save(contaEspecial);

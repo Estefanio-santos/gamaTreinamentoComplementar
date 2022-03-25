@@ -77,6 +77,10 @@ public class Conta {
 		this.saldo -= valor;
 	}
 
+	public void transfereValor(double valor, Conta destino) {
+		this.saldo -= valor;
+		destino.depositarValor(valor);
+	}
 	@Override
 	public String toString() {
 		return "Conta: " + numero + "; - Agência: " + agencia + "; - Saldo de R$" + saldo + "; Nome: " + nome + "; CPF: " + cpf + "; telefone: " + telefone;

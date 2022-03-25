@@ -17,7 +17,7 @@ public static void main(String[] args) {
 	Conta c1;
 	Conta conta = new Conta();
 
-	while (opcao != 7) {
+	while (opcao != 8) {
 			System.out.println("Bem-vindos ao Wolf Bank");
 		System.out.println();
 		System.out.println("1-Nova conta Corrente");
@@ -25,8 +25,9 @@ public static void main(String[] args) {
 		System.out.println("3-Visualizar conta");
 		System.out.println("4-Realizar depósito:");
 		System.out.println("5-Realizar Saque:");
-		System.out.println("6-Listar contas: ");
-		System.out.println("7-Sair");
+		System.out.println("6-Realizar transferência: ");
+		System.out.println("7-Listar contas: ");
+		System.out.println("8-Sair");
 		System.out.println("Sua opção:");
 		entradaDigitada = teclado.nextLine();
 		opcao = Integer.parseInt(entradaDigitada);
@@ -100,12 +101,21 @@ public static void main(String[] args) {
 		}
 
 		case 6: {
+			System.out.println(conta.getNome()+" digite o valor que deseja transferir: ");
+			entradaDigitada = teclado.nextLine();
+			double valor = Double.parseDouble(entradaDigitada);
+conta.transfereValor(valor, conta);
+			break;
+
+		}
+
+		case 7: {
 			System.out.println("Lista de contas:");
 			contas.listarContas();
 			break;
 		}
 
-		case 7: {
+		case 8: {
 			System.out.println("Fim do Programa!");
 			break;
 		}

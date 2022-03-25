@@ -1,6 +1,5 @@
 package br.corp.wolfbank.model;
 
-
 import java.util.Random;
 
 import javax.persistence.Column;

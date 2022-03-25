@@ -26,4 +26,16 @@ System.out.println("Saque realizado com sucesso, R$" + valor + ", e seu saldo é 
 		}
 }
 
+@Override
+	public void transfereValor(double valor, Conta destino) {
+		// TODO Auto-generated method stub
+		super.transfereValor(valor, destino);
+			if(this.getSaldo() >= valor) {
+				this.setSaldo(this.getSaldo() - valor);
+				destino.depositarValor(valor);
+			} else {
+				System.out.println("Valor insuficiente!");
+			}
+}
+
 } // fim da classe

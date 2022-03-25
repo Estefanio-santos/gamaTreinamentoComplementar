@@ -21,7 +21,7 @@ public class ContaCorrenteController {
 	@Autowired
 	private ContaCorrenteDao dao;
 
-@GetMapping("/contas")
+@GetMapping("/contacorrente")
 public ResponseEntity<ArrayList<ContaCorrenteModel>> listarTodas() {
 	ArrayList<ContaCorrenteModel> obterDados = (ArrayList<ContaCorrenteModel>) dao.findAll();
 	
@@ -32,18 +32,18 @@ public ResponseEntity<ArrayList<ContaCorrenteModel>> listarTodas() {
 	}
 }
 
-@GetMapping("/conta/{numero}")
+@GetMapping("/contacorrente/{numero}")
 public ResponseEntity<ContaCorrenteModel> buscarUmaUnicaConta(@PathVariable int numero) {
 	ContaCorrenteModel contaCorrente = dao.findById(numero).orElse(null);
 
 	if(contaCorrente != null) {
-		ResponseEntity.ok(contaCorrente);
+		return ResponseEntity.ok(contaCorrente);
 	} else {
 		return ResponseEntity.notFound().build();
 	}
 }
 
-@PostMapping("/conta/nova")
+@PostMapping("/contacorrente/nova")
 public ResponseEntity<ContaCorrenteModel> novaConta(@RequestBody ContaCorrenteModel contaCorrente) {
 	try {
 		ContaCorrenteModel novaConta = dao.save(contaCorrente);
@@ -52,4 +52,6 @@ public ResponseEntity<ContaCorrenteModel> novaConta(@RequestBody ContaCorrenteMo
 		return ResponseEntity.status(400).build();
 	}
 }
+
+
 } // fim da classe
